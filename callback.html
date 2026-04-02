@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connecting to QuickBooks...</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 80px auto; padding: 0 20px; text-align: center; color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Connecting to QuickBooks...</h1>
+    <p id="status">Redirecting to local application...</p>
+    <script>
+        var params = window.location.search;
+        if (params) {
+            window.location.href = "http://localhost:8080/callback" + params;
+        } else {
+            document.getElementById("status").textContent = "Error: No authorization parameters received.";
+        }
+    </script>
+    <noscript>
+        <p>JavaScript is required. Please enable JavaScript and try again.</p>
+    </noscript>
+</body>
+</html>
